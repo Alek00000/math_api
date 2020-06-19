@@ -14,9 +14,10 @@ class PostPhotoController extends ApiController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Post $post)
+    public function index(Post $post, Photo $photo)
     {
-        $photos = $post->photos('file');
+        $photos = $post-> $photo-> file;
+
 
         return $this->showAll($photos);
     }

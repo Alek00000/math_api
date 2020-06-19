@@ -48,7 +48,7 @@ class PhotoController extends ApiController
      */
     public function show(Photo $photo)
     {
-        //
+        return $this->showOne($photo);
     }
 
     /**

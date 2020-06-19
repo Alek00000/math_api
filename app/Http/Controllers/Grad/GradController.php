@@ -49,7 +49,7 @@ class GradController extends ApiController
      */
     public function show(Grad $grad)
     {
-        //
+        return $this->showOne($grad);
     }
 
     /**

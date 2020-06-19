@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Kontakt;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\ApiController;
 use App\Kontakt;
 use Illuminate\Http\Request;
 
-class KontaktController extends Controller
+class KontaktController extends ApiController
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,8 @@ class KontaktController extends Controller
      */
     public function index()
     {
-        //
+        $kontakts=Kontakt::all();
+        return $this->showAll($kontakts);
     }
 
     /**
@@ -47,7 +48,7 @@ class KontaktController extends Controller
      */
     public function show(Kontakt $kontakt)
     {
-        //
+        return $this->showOne($kontakt);
     }
 
     /**
