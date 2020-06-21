@@ -1,10 +1,10 @@
 <?php
 
 //Grad
-Route::resource('grads', 'Grad\GradController', ['only' => ['index','show']]);
+Route::resource('grads', 'Grad\GradController');
 
 //User
-Route::resource('users', 'User\UserController', ['only' => ['index','show']]);
+Route::resource('users', 'User\UserController');
 
 //Post
 Route::resource('posts', 'Post\PostController');
@@ -13,13 +13,13 @@ Route::resource('posts.categories', 'Post\PostCategoryController', ['only' => ['
 Route::resource('posts.users', 'Post\PostUserController', ['only' => ['index','show']]);
 
 //Kontakt
-Route::resource('kontakts', 'Kontakt\KontaktController', ['only' => ['index','show']]);
+Route::resource('kontakts', 'Kontakt\KontaktController');
 
 //Role
-Route::resource('roles', 'Role\RoleController', ['only' => ['index','show']]);
+Route::resource('roles', 'Role\RoleController');
 
 //Category
-Route::resource('categories', 'Category\CategoryController', ['only' => ['index','show']]);
+Route::resource('categories', 'Category\CategoryController');
 
 //Photo
-Route::resource('photos', 'Photo\PhotoController', ['only' => ['index','show']]);
+Route::resource('photos', 'Photo\PhotoController');

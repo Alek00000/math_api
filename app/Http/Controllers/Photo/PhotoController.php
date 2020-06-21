@@ -82,6 +82,7 @@ class PhotoController extends ApiController
      */
     public function destroy(Photo $photo)
     {
-        //
+        $photo->delete();
+        return $this->showOne($photo);
     }
 }
