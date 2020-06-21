@@ -82,6 +82,7 @@ class UserController extends ApiController
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return $this->showOne($user);
     }
 }

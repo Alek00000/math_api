@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Post;
 use App\Http\Controllers\ApiController;
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Testing\Constraints\SoftDeletedInDatabase;
 
 class PostController extends ApiController
 {
@@ -82,6 +83,7 @@ class PostController extends ApiController
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return $this->showOne($post);
     }
 }

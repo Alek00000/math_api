@@ -82,6 +82,7 @@ class RoleController extends ApiController
      */
     public function destroy(Role $role)
     {
-        //
+        $role->delete();
+        return $this->showOne($role);
     }
 }

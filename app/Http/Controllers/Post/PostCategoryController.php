@@ -84,6 +84,7 @@ class PostCategoryController extends ApiController
      */
     public function destroy(Post $post)
     {
-        //
+
+
     }
 }

@@ -7,9 +7,9 @@ Route::resource('grads', 'Grad\GradController', ['only' => ['index','show']]);
 Route::resource('users', 'User\UserController', ['only' => ['index','show']]);
 
 //Post
-Route::resource('posts', 'Post\PostController', ['only' => ['index','show']]);
+Route::resource('posts', 'Post\PostController');
 Route::resource('posts.photos', 'Post\PostPhotoController', ['only' => ['index','show']]);
-Route::resource('posts.categories', 'Post\PostCategoryController', ['only' => ['index','show']]);
+Route::resource('posts.categories', 'Post\PostCategoryController', ['only' => ['index','show', 'destroy']]);
 Route::resource('posts.users', 'Post\PostUserController', ['only' => ['index','show']]);
 
 //Kontakt

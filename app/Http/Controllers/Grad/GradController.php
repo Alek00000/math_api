@@ -83,6 +83,7 @@ class GradController extends ApiController
      */
     public function destroy(Grad $grad)
     {
-        //
+        $grad->delete();
+        return $this->showOne($grad);
     }
 }
