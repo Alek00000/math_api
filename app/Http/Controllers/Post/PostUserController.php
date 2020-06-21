@@ -4,22 +4,21 @@ namespace App\Http\Controllers\Post;
 
 use App\Http\Controllers\ApiController;
 use App\Post;
-use App\Photo;
 use Illuminate\Http\Request;
 
-class PostPhotoController extends ApiController
+class PostUserController extends ApiController
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Post $post, Photo $photo)
+    public function index(Post $post)
     {
-        $photos = $post->photo()->get();
+        $users = $post->user()->get();
 
 
-        return $this->showAll($photos);
+        return $this->showAll($users);
     }
 
     /**
