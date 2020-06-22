@@ -37,7 +37,19 @@ class KontaktController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+
+            'ime' => 'required',
+            'grad_id' => 'int|required',
+            'razred_id' => 'int|required',
+            'email' => 'required',
+            'cas' => 'required',
+        ];
+
+        $this->validate($request, $rules);
+
+        $newKontakt = Kontakt::create($request->all());
+        return $this->showOne($newKontakt, 201);
     }
 
     /**

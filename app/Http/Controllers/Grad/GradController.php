@@ -38,7 +38,16 @@ class GradController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+
+            'naziv' => 'required',
+
+        ];
+
+        $this->validate($request, $rules);
+
+        $newGrad = Grad::create($request->all());
+        return $this->showOne($newGrad, 201);
     }
 
     /**

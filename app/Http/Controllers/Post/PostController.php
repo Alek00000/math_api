@@ -38,7 +38,18 @@ class PostController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'user_id' => 'int|required',
+            'category_id' => 'int|required',
+            'photo_id' => 'int|required',
+            'title' => 'required',
+            'body' => 'required',
+        ];
+
+        $this->validate($request, $rules);
+
+        $newPost = Post::create($request->all());
+        return $this->showOne($newPost, 201);
     }
 
     /**

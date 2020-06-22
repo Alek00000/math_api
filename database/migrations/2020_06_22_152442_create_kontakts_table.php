@@ -16,10 +16,12 @@ class CreateKontaktsTable extends Migration
         Schema::create('kontakts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('ime');
-            $table->string('grad');
-            $table->string('razred');
+            $table->unsignedBigInteger('grad_id')->index();
+            $table->unsignedBigInteger('razred_id')->index();
             $table->string('email');
             $table->mediumText('cas');
+            $table->foreign('grad_id')->references('id')->on('grads');
+            $table->foreign('razred_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

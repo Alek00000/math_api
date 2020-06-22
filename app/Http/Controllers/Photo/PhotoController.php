@@ -37,7 +37,15 @@ class PhotoController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+
+            'file' => 'required',
+        ];
+
+        $this->validate($request, $rules);
+
+        $newPhoto = Photo::create($request->all());
+        return $this->showOne($newPhoto, 201);
     }
 
     /**
